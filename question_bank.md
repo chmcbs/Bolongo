@@ -1,96 +1,86 @@
-# Level Requirement
+# Tree Recommendations (Generic)
+Fill with: level numbers from trees_df.level_requirement
 
-    Templates:
-    - (What / Which) is the best tree (to grow / to plant / to choose) at level ___?
-    - (What / Which) are the best trees (to grow / to plant / to choose) at level ___?
-    - (What / Which) (should I / could I / do I / can I) (grow / plant / choose) at level ___?
-    - (What / Which) tree is the best (to grow / to plant / to choose) at level ___?
-    - (What / Which) trees are best (to grow / to plant / to choose) at level ___?
-    - (What / Which) trees are the best (to grow / to plant / to choose) at level ___?
-    - (What / Which) tree(s) (should I / could I / do I / can I) (grow / plant / choose) at level ___?
-    - (What / Which) level (do I need / is needed / is required) to (grow / plant) ___?
-    - (What / Which) level (do I need / is needed / is required) for (growing / planting) ___?
-    - What is the level (requirement / required / needed) to (grow / plant) ___?
-    - What is the level (requirement / required / needed) for (growing / planting) ___?
-    - What is (required / the required level) for (growing / planting) ___?
-    - What is (required / the required level) to (grow / plant) ___?
-    - What level (are / is) ___?
-    - What do I need to (grow / plant) ___?
-    - What do I need for (growing / planting) ___?
+    - What should I grow at level ___?
+    - What should I plant at level ___?
+    - Which are the best trees at level ___?
 
-    Keywords:
-    "level"
+# Tree Recommendations (Regular)
+Fill with: level numbers from trees_df.level_requirement
 
-    Data Source:
-    trees_df
+    - What is the best tree at level ___?
+    - Which tree should I grow at level ___?
+    - What tree should I plant at level ___?
+    - What tree is best at level ___?
+
+# Tree Recommendations (Fruit)
+Fill with: level numbers from trees_df.level_requirement
+
+    - What is the best fruit tree at level ___?
+    - Which fruit tree should I grow at level ___?
+    - What fruit tree should I plant at level ___?
+    - What fruit tree is best at level ___?
+
+# Level Requirements
+Fill with: tree names from trees_df.tree_name
+
+    - What level do I need for ___ trees?
+    - What level do I need to plant ___?
+    - What level is needed to grow ___ trees?
+    - What level is required for ___?
+    - What level is required for growing ___ trees?
+    - What is the level requirement for ___?
+    - What farming level do I need for ___ trees?
+    - At what level can I plant ___?
+
+# Quest Requirements
+Fill with: patch names from patches_df.location_simple
+
+    - Which quests are required to use the ___ patch?
+    - What quest is needed for the ___ patch?
+    - Which quests are recommended for the ___ patch?
+
 
 # Payment
+Fill with: tree names from trees_df.tree_name
 
-    Templates:
-    - (What / Which) (item / payment / gift) is (required / needed) to (grow / plant) ___?
-    - (What / Which) (item / payment / gift) is (required / needed) for (growing / planting) ___?
-    - (What / Which) (item / payment / gift) do I need (to give to the farmer) to (grow / plant) ___?
-    - (What / Which) (item / payment / gift) (should / do) I (give / give to the farmer) to (grow / plant) ___?
-    - (What / Which) (item / payment / gift) (does / do) ___ (need / require)?
-    - (What / Which) (item / payment / gift) (does the farmer / do farmers) (need / require) to (grow / plant) ___?
-    - (What / Which) (item / payment / gift) (does the farmer / do farmers) (need / require) for (growing / planting) ___?
-
-    Keywords:
-    "payment", "pay", "gift", "farmer"
-
-    Data source:
-    trees_df
+    - What payment is needed for ___ trees?
+    - What do I pay the farmer to protect ___?
+    - What item does the farmer need for ___ trees?
+    - What should I give the farmer for ___?
+    - How do I protect ___ trees?
+    - What is the protection payment for ___?
 
 # Growth Time
+Fill with: tree names from trees_df.tree_name
 
-    Templates:
-    - How long (do / does) ___ take to grow?
-    - How long do I have to wait for ___?
-    - How long does it take to grow (an / a) ___?
-    - How long does it take for (an / a) ___ to grow?
-    - When will (my / a / an) ___ be (fully grown / finished)?
-    - How long until ___ are (fully grown / finished)?
+    - How long does ___ take to grow?
+    - How long do ___ trees take to grow?
+    - How long until ___ is fully grown?
+    - When will ___ trees be ready?
+    - How much time does ___ need to grow?
 
-    Keywords:
-    "how long", "when"
+# Patches (Generic)
+Fill with: static values ["normal trees", "regular trees", "fruit trees"]
 
-    Data source:
-    trees_df
+    - Where can I grow ___?
+    - What patches can I use for ___?
+    - Which patches are for ___?
+    - Where should I plant ___?
+    - Where do I plant ___?
 
+# Patches (Specific)
+Fill with: tree names from trees_df.tree_name
 
-
-# Patches
-
-    Templates:
-    - (Which / What) (quest / skill) is (required / needed / recommended) for the ___ patch?
-    - (Which / What) (quests / skills) are (required / needed / recommended) for the ___ patch?
-    - (Which / What) (quest / skill) is (required / needed / recommended) for ___?
-    - (Which / What) (quest / skill) are (required / needed / recommended) for ___?
-    - (Which / What) (quest / skill) do I need (to access / for) the ___ patch?
-    - (Which / What) (quests / skills) do I need (to access / for) the ___ patch?
-    - (Which / What) (quest / skill) do I need (to access / for) ___?
-    - (Which / What) (quests / skills) do I need (to access / for) ___?
-    - (Where / Which / What) are (all) the (best) ___ patches?
-    - Where (can / do / should) I (grow / plant) ___?
-    - Give me a list of all (of the) ___ patches.
-    - List all (of the) ___ patches.
-
-    Keywords:
-    "quest", "patch", "patches", "where"
-
-    Data source:
-    patches_df
-
+    - Where can I grow ___ trees?
+    - Which patches can I use for growing ___?
+    - Where should I plant ___ trees?
 
 # Transportation
+Fill with: location names from patches_df.location_simple
 
-    Templates:
-    - How (do / should / can) I (get / travel / teleport) to ___?
-    - (What / Which / Where) is the (nearest / closest) teleport to ___?
-    - (What / Which) is the (fastest / quickest) (way / method) to (get / teleport / travel) to ___?
-
-    Keywords:
-    "teleport"
-
-    Data source:
-    patches_df
+    - How do I get to the ___ patch?
+    - How can I teleport to the ___ patch?
+    - What is the fastest way to the ___ patch?
+    - What is the nearest teleport to the ___ patch?
+    - How should I travel to patch in ___?
