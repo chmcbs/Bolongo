@@ -1,4 +1,4 @@
-# Tree Recommendations (Generic)
+# Tree Recommendations
 Fill with: level numbers from trees_df.level_requirement
 
     - What is the best tree at level ___?
@@ -7,16 +7,6 @@ Fill with: level numbers from trees_df.level_requirement
     - What tree should I plant at level ___?
     - What tree is best at level ___?
     - What should I grow at level ___?
-    - What should I plant at level ___?
-
-# Tree Recommendations (Fruit)
-Fill with: level numbers from trees_df.level_requirement
-
-    - What is the best fruit tree at level ___?
-    - Which are the best fruit trees at level ___?
-    - Which fruit tree should I grow at level ___?
-    - What fruit tree should I plant at level ___?
-    - What fruit tree is best at level ___?
     - What should I plant at level ___?
 
 # Level Requirements
