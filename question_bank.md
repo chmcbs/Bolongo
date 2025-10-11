@@ -60,21 +60,15 @@ Fill with: tree names from trees_df.tree_name
     - When will ___ trees be ready?
     - How much time does ___ need to grow?
 
-# Patches (Generic)
-Fill with: static values ["normal trees", "regular trees", "fruit trees"]
-
-    - Where can I grow ___?
-    - What patches can I use for ___?
-    - Which patches are for ___?
-    - Where should I plant ___?
-    - Where do I plant ___?
-
-# Patches (Specific)
+# Patches
 Fill with: tree names from trees_df.tree_name
 
     - Where can I grow ___ trees?
     - Which patches can I use for growing ___?
     - Where should I plant ___ trees?
+    - What patches can I use for ___?
+    - Which patches are for ___ trees?
+    - Where do I plant ___?
 
 # Transportation
 Fill with: location names from patches_df.location_simple
