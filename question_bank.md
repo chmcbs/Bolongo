@@ -1,25 +1,23 @@
 # Tree Recommendations (Generic)
 Fill with: level numbers from trees_df.level_requirement
 
-    - What should I grow at level ___?
-    - What should I plant at level ___?
-    - Which are the best trees at level ___?
-
-# Tree Recommendations (Regular)
-Fill with: level numbers from trees_df.level_requirement
-
     - What is the best tree at level ___?
+    - Which are the best trees at level ___?
     - Which tree should I grow at level ___?
     - What tree should I plant at level ___?
     - What tree is best at level ___?
+    - What should I grow at level ___?
+    - What should I plant at level ___?
 
 # Tree Recommendations (Fruit)
 Fill with: level numbers from trees_df.level_requirement
 
     - What is the best fruit tree at level ___?
+    - Which are the best fruit trees at level ___?
     - Which fruit tree should I grow at level ___?
     - What fruit tree should I plant at level ___?
     - What fruit tree is best at level ___?
+    - What should I plant at level ___?
 
 # Level Requirements
 Fill with: tree names from trees_df.tree_name
@@ -39,7 +37,6 @@ Fill with: patch names from patches_df.location_simple
     - Which quests are required to use the ___ patch?
     - What quest is needed for the ___ patch?
     - Which quests are recommended for the ___ patch?
-
 
 # Payment
 Fill with: tree names from trees_df.tree_name
