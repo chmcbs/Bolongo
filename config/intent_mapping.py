@@ -1,5 +1,5 @@
 """
-Intent mapping configuration for entity extraction
+Intent mapping configuration for data retrieval
 
 """
 
