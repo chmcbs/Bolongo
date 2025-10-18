@@ -1,6 +1,7 @@
 # Python
 source/__pycache__
 config/__pycache__
+training/__pycache__
 
 # Jupyter
 .ipynb_checkpoints
