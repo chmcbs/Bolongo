@@ -6,7 +6,7 @@ Intent classifier for user question categorization
 import joblib
 
 class IntentClassifier:
-    def __init__(self, model_dir='../models'):
+    def __init__(self, model_dir='models'):
         self.vectorizer = joblib.load(f'{model_dir}/vectoriser.pkl')
         self.classifier = joblib.load(f'{model_dir}/classifier.pkl')
     

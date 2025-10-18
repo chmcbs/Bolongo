@@ -12,7 +12,9 @@ from typing import List, Dict, Tuple
 class TrainingDataGenerator:
     """Generates training examples from question bank templates and CSV data"""
     
-    def __init__(self, question_bank_path: str, trees_csv_path: str, patches_csv_path: str):
+    def __init__(self, question_bank_path: str, 
+                 trees_csv_path: str, 
+                 patches_csv_path: str):
         """Initialize the training data generator"""
         self.question_bank_path = question_bank_path
         self.trees_csv_path = trees_csv_path
