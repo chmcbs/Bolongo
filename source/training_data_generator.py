@@ -162,7 +162,7 @@ class TrainingDataGenerator:
 if __name__ == '__main__':
 
     generator = TrainingDataGenerator(
-        question_bank_path='../question_bank.md',
+        question_bank_path='../config/question_bank.md',
         trees_csv_path='../data/trees_df.csv',
         patches_csv_path='../data/patches_df.csv'
     )
