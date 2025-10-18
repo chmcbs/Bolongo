@@ -1,4 +1,7 @@
-"""Intent classifier for user question categorization."""
+"""
+Intent classifier for user question categorization
+
+"""
 
 import joblib
 
