@@ -1,5 +1,5 @@
 """
-Template-based training data generator for intent classification.
+Template-based training data generator for intent classification
 
 """
 
@@ -10,10 +10,10 @@ from typing import List, Dict, Tuple
 
 
 class TrainingDataGenerator:
-    """Generates training examples from question bank templates and CSV data."""
+    """Generates training examples from question bank templates and CSV data"""
     
     def __init__(self, question_bank_path: str, trees_csv_path: str, patches_csv_path: str):
-        """Initialize the training data generator."""
+        """Initialize the training data generator"""
         self.question_bank_path = question_bank_path
         self.trees_csv_path = trees_csv_path
         self.patches_csv_path = patches_csv_path
@@ -23,13 +23,13 @@ class TrainingDataGenerator:
         self.patches_df = None
         
     def load_data(self):
-        """Load CSV data files."""
+        """Load CSV data files"""
         self.trees_df = pd.read_csv(self.trees_csv_path)
         self.patches_df = pd.read_csv(self.patches_csv_path)
         
     def parse_question_bank(self) -> Dict[str, Dict[str, any]]:
         """
-        Parse question bank to extract templates and their fill instructions.
+        Parse question bank to extract templates and their fill instructions
         
         Returns:
             Dictionary mapping intent names to {fill_with: str, templates: List[str]}
@@ -68,7 +68,7 @@ class TrainingDataGenerator:
     
     def get_fill_values(self, fill_instruction: str) -> List[str]:
         """
-        Get the list of values to fill templates with.
+        Get the list of values to fill templates with
         
         Args:
             fill_instruction: The fill instruction from question bank
@@ -96,7 +96,7 @@ class TrainingDataGenerator:
     
     def generate_training_data(self, samples_per_intent: int = None) -> Tuple[List[str], List[str]]:
         """
-        Generate training data by filling templates with values.
+        Generate training data by filling templates with values
 
         Args:
             samples_per_intent: Optional limit on samples per intent
@@ -135,7 +135,7 @@ class TrainingDataGenerator:
     
     def generate_dataset(self, samples_per_intent: int = None) -> pd.DataFrame:
         """
-        Generate complete training dataset.
+        Generate complete training dataset
         
         Args:
             samples_per_intent: Optional limit on samples per intent
