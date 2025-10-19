@@ -1,6 +1,7 @@
 """
 Template-based training data generator for intent classification
 
+Note: This module was generated with AI assistance
 """
 
 import re
