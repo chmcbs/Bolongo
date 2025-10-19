@@ -17,10 +17,11 @@ class AnswerRetriever:
     def get_answer(self, question, intent):
         # Get the lookup column and create a list of values
         lookup_column = self.intent_mapping[intent]['lookup_column']
-        lookup_column_values = list(set(lookup_column.astype(str).tolist()))    
+        lookup_column_values = list(set(lookup_column.astype(str).tolist()))
 
         # Find matching lookup value using word boundaries to avoid partial matches    
-        lookup_value = [value for value in lookup_column_values if re.search(r'\b' + re.escape(value.lower()) + r'\b', question.lower())]
+        lookup_value = next((value for value in lookup_column_values 
+                           if re.search(rf'\b{re.escape(value.lower())}\b', question.lower())), None)
 
         # Determine which dataframe to search based on the lookup column
         if lookup_column.name in self.trees_df.columns:
@@ -29,7 +30,7 @@ class AnswerRetriever:
             df_to_search = self.patches_df
 
         # Find the row where the value in the lookup column matches the lookup value
-        matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value[0].lower()]
+        matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
 
         # Get the answer column
         answer_column = self.intent_mapping[intent]['answer_column']
