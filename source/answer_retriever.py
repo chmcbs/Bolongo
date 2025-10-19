@@ -46,6 +46,6 @@ if __name__ == '__main__':
     intent = "level_requirements"
     lookup_value, answer_value = retriever.get_answer(question, intent)
     print(f'Question: {question}')
+    print(f'Lookup: {lookup_value}')
     print(f'Intent: {intent}')
-    print(f'Lookup Value: {lookup_value}')
-    print(f'Answer Value: {answer_value}')
+    print(f'Answer: {answer_value}')
