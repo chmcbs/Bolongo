@@ -162,22 +162,11 @@ class TrainingDataGenerator:
 
 
 if __name__ == '__main__':
-
     generator = TrainingDataGenerator(
         question_bank_path='question_bank.md',
         trees_csv_path='../data/trees_df.csv',
         patches_csv_path='../data/patches_df.csv'
     )
-    
     df = generator.generate_dataset()
-    
     print(f"Generated {len(df)} training examples")
-    print(f"\nIntent distribution:")
-    print(df['intent'].value_counts())
-    print(f"\nSample examples:")
-    for intent in df['intent'].unique():
-        print(f"\n{intent.upper()}:")
-        samples = df[df['intent'] == intent].head(5)
-        for _, row in samples.iterrows():
-            print(f"  - {row['text']}")
-
+    print(f"{df['intent'].value_counts()}")
