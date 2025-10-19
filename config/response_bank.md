@@ -26,8 +26,8 @@ answer_value = level_requirement
     - Level {answer_value} Farming is required to plant {lookup_value} trees.
     - You can grow {lookup_value} trees at level {answer_value} Farming.
     - You can plant {lookup_value} trees at level {answer_value} Farming.
-    - You need level {lookup_value} Farming to plant {lookup_value} trees.
-    - You need level {lookup_value} Farming to grow {lookup_value} trees.
+    - You need level {answer_value} Farming to plant {lookup_value} trees.
+    - You need level {answer_value} Farming to grow {lookup_value} trees.
 
 # Quest Requirements
 dataframe = patches_df

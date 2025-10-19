@@ -8,11 +8,11 @@ import random
 
 class ResponseGenerator:
     def __init__(self):
-        self.templates = self.parse_answer_bank()
+        self.templates = self.parse_response_bank()
 
-    def parse_answer_bank(self, answer_bank_path='config/answer_bank.md'):
-        # Read the answer bank file
-        with open(answer_bank_path, 'r') as file:
+    def parse_response_bank(self, response_bank_path='config/response_bank.md'):
+        # Read the response bank file
+        with open(response_bank_path, 'r') as file:
             content = file.read()
         
         # Initialize templates dictionary and current intent
