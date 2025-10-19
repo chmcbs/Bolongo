@@ -163,9 +163,9 @@ class TrainingDataGenerator:
 
 if __name__ == '__main__':
     generator = TrainingDataGenerator(
-        question_bank_path='./training/question_bank.md',
-        trees_csv_path='./data/trees_df.csv',
-        patches_csv_path='./data/patches_df.csv'
+        question_bank_path='training/question_bank.md',
+        trees_csv_path='data/trees_df.csv',
+        patches_csv_path='data/patches_df.csv'
     )
     df = generator.generate_dataset()
     print(f"Generated {len(df)} training examples")
