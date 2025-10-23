@@ -54,22 +54,16 @@ dataframe = trees_df
 lookup_value = tree_name
 answer_value = growth_time_minutes
 
-    - {lookup_value} trees take {answer_value} minutes to grow.
-    - {lookup_value} trees will be fully grown after {answer_value} minutes.
-    - {lookup_value} trees take {answer_value} minutes until they are fully grown.
-    - {lookup_value} trees will be fully grown {answer_value} minutes after planting.
-    - {lookup_value} trees will be ready {answer_value} minutes after planting.
+    - {lookup_value} trees take {answer_value} to grow.
+    - {lookup_value} trees will be fully grown after {answer_value}.
+    - {lookup_value} trees take {answer_value} until they are fully grown.
+    - {lookup_value} trees will be fully grown {answer_value} after planting.
+    - {lookup_value} trees will be ready {answer_value} after planting.
 
 # Transportation
 dataframe = patches_df
 lookup_value = location_simple
 answer_value = transportation_methods
-
-    - How do I get to the ___ patch?
-    - How can I teleport to the ___ patch?
-    - What is the fastest way to the ___ patch?
-    - What is the nearest teleport to the ___ patch?
-    - How should I travel to patch in ___?
 
     - To get to the {lookup_value} patch, you can use the following methods: {answer_value}.
     - The fastest ways to get to the {lookup_value} patch are: {answer_value}.
