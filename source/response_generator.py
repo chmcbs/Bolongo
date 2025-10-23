@@ -36,7 +36,11 @@ class ResponseGenerator:
     def generate_response(self, intent, lookup_value, answer_value):
         template = random.choice(self.templates[intent])
         response = template.replace('{lookup_value}', str(lookup_value).title())
-        response = response.replace('{answer_value}', str(answer_value).title())
+
+        if intent == 'growth_time':
+            response = response.replace('{answer_value}', str(answer_value))
+        else:
+            response = response.replace('{answer_value}', str(answer_value).title())
         
         return response
 

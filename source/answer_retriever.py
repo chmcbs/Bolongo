@@ -39,7 +39,7 @@ class AnswerRetriever:
             lookup_float = float(lookup_value)
             valid_rows = df_to_search[df_to_search[lookup_column.name] <= lookup_float]
             matching_row_index = valid_rows[lookup_column.name].idxmax()
-            matching_row = valid_rows.loc[[matching_row_index]]
+            matching_row = valid_rows.loc[[matching_row_index]]        
         else:
             # Find the row where the value in the lookup column matches the lookup value
             matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
@@ -49,6 +49,16 @@ class AnswerRetriever:
 
         # Get the value from the answer column
         answer_value = matching_row.iloc[0][answer_column.name]
+        
+        # Special handling for growth time
+        if intent == 'growth_time':
+            minutes = int(answer_value)
+            hours = minutes / 60
+            remaining_minutes = minutes % 60
+            if remaining_minutes == 0:
+                answer_value = f'{int(hours)} hours'
+            else:
+                answer_value = f'{int(hours)} hours and {int(remaining_minutes)} minutes'
         
         return lookup_value, answer_value
 
