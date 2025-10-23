@@ -29,8 +29,20 @@ class AnswerRetriever:
         else:
             df_to_search = self.patches_df
 
-        # Find the row where the value in the lookup column matches the lookup value
-        matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
+        # Special handling for tree recommendations
+        if intent == 'tree_recommendations':
+            # Extract numbers from the question
+            numbers = re.findall(r'\b\d+\b', question)
+            # Set the lookup value to the first number found
+            lookup_value = numbers[0]
+            # Find the row with the highest level requirement less than or equal to the lookup value
+            lookup_float = float(lookup_value)
+            valid_rows = df_to_search[df_to_search[lookup_column.name] <= lookup_float]
+            matching_row_index = valid_rows[lookup_column.name].idxmax()
+            matching_row = valid_rows.loc[[matching_row_index]]
+        else:
+            # Find the row where the value in the lookup column matches the lookup value
+            matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
 
         # Get the answer column
         answer_column = self.intent_mapping[intent]['answer_column']
