@@ -37,11 +37,12 @@ class ResponseGenerator:
         template = random.choice(self.templates[intent])
         response = template.replace('{lookup_value}', str(lookup_value).title())
 
-        if intent == 'growth_time':
-            response = response.replace('{answer_value}', str(answer_value))
-        else:
+        # Special handling for tree recommendations
+        if intent == 'tree_recommendations':
             response = response.replace('{answer_value}', str(answer_value).title())
-        
+        else:
+            response = response.replace('{answer_value}', str(answer_value))
+
         return response
 
 
