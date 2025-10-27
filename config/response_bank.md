@@ -29,14 +29,6 @@ answer_value = level_requirement
     - You need level {answer_value} Farming to plant {lookup_value} trees.
     - You need level {answer_value} Farming to grow {lookup_value} trees.
 
-# Quest Requirements
-dataframe = patches_df
-lookup_value = location_simple
-answer_value = patch_requirement
-
-    - Using the {lookup_value} patch requires {answer_value}.
-    - {answer_value} is required to use the {lookup_value} patch.
-
 # Payment
 dataframe = trees_df
 lookup_value = tree_name
