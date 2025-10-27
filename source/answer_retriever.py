@@ -60,14 +60,19 @@ class AnswerRetriever:
             else:
                 answer_value = f'{int(hours)} hours and {int(remaining_minutes)} minutes'
         
-        return lookup_value, answer_value
+        # Special handling for quest requirement queries
+        if intent == 'quest_requirements':
+            recommended = matching_row.iloc[0]['patch_recommended']
+            return lookup_value, answer_value, recommended
+
+        return lookup_value, answer_value, None
 
 
 if __name__ == '__main__':
     retriever = AnswerRetriever()
     question = "What level do I need for magic trees?"
     intent = "level_requirements"
-    lookup_value, answer_value = retriever.get_answer(question, intent)
+    lookup_value, answer_value, recommended = retriever.get_answer(question, intent)
     print(f'Question: {question}')
     print(f'Lookup: {lookup_value}')
     print(f'Intent: {intent}')

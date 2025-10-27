@@ -4,7 +4,7 @@ Response generator for user question response generation
 """
 
 import random
-
+import pandas as pd
 
 class ResponseGenerator:
     def __init__(self):
@@ -33,11 +33,27 @@ class ResponseGenerator:
         
         return templates
 
-    def generate_response(self, intent, lookup_value, answer_value):
+    def generate_response(self, intent, lookup_value, answer_value, recommended=None):
+        # Special handling for quest requirement queries
+        if intent == 'quest_requirements':
+            # No requirement, no recommendation
+            if pd.isna(answer_value) and pd.isna(recommended):
+                return f"The {str(lookup_value).title()} patch has no quest requirements."
+            # No requirement but has a recommendation
+            elif pd.isna(answer_value) and not pd.isna(recommended):
+                return f"The {str(lookup_value).title()} patch has no quest requirements, but {str(recommended)} is recommended."
+            # Requirement and recommendation
+            elif not pd.isna(answer_value) and not pd.isna(recommended):
+                return f"Using the {str(lookup_value).title()} patch requires {str(answer_value)}, and {str(recommended)} is also recommended."
+            # Requirement but no recommendation
+            else:
+                return f"Using the {str(lookup_value).title()} patch requires {str(answer_value)}."
+
+        # Regular template handling
         template = random.choice(self.templates[intent])
         response = template.replace('{lookup_value}', str(lookup_value).title())
 
-        # Special handling for tree recommendations
+        # Capitalisation for tree recommendations
         if intent == 'tree_recommendations':
             response = response.replace('{answer_value}', str(answer_value).title())
         else:
