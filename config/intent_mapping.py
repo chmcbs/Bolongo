@@ -11,11 +11,11 @@ def get_intent_mapping(trees_df, patches_df):
             'lookup_column': trees_df['level_requirement'],
             'answer_column': trees_df['tree_name']
         },
-        'level_requirements': {
+        'tree_requirements': {
             'lookup_column': trees_df['tree_name'],
             'answer_column': trees_df['level_requirement']
         },
-        'quest_requirements': {
+        'patch_requirements': {
             'lookup_column': patches_df['location_simple'],
             'answer_column': patches_df['patch_requirement']
         },

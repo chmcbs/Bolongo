@@ -54,19 +54,19 @@ class ResponseGenerator:
         is_fruit_patch = result.get('is_fruit_patch', False)
 
         # Create patch name for patch-based queries
-        if intent in ['transportation', 'quest_requirements']:
+        if intent in ['transportation', 'patch_requirements']:
             patch_name = f'{lookup_value} fruit tree patch' if is_fruit_patch else f'{lookup_value} patch'
         
-        # Special handling for quest requirement queries
-        if intent == 'quest_requirements':
+        # Special handling for patch requirement queries
+        if intent == 'patch_requirements':
             recommended = result.get('recommended')
             recommended = None if pd.isna(recommended) else str(recommended)
             answer_value = None if pd.isna(answer_value) else str(answer_value)
 
             if answer_value is None and recommended is None:
-                return f"The {patch_name} has no quest requirements."
+                return f"The {patch_name} has no requirements."
             elif answer_value is None and recommended is not None:
-                return f"The {patch_name} has no quest requirements, but {recommended} is recommended."
+                return f"The {patch_name} has no requirements, but {recommended} is recommended."
             elif answer_value is not None and recommended is not None:
                 return f"Using the {patch_name} requires {answer_value}, and {recommended} is also recommended."
             else:
@@ -102,7 +102,7 @@ class ResponseGenerator:
 if __name__ == '__main__':
     generator = ResponseGenerator()
     question = "What level do I need for magic trees?"
-    intent = "level_requirements"
+    intent = "tree_requirements"
     result = {'lookup_value': 'magic', 'answer_value': '75'}
     response = generator.generate_response(intent, result)
     print(f'Question: {question}')

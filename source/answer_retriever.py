@@ -104,8 +104,8 @@ class AnswerRetriever:
         if intent == 'transportation':
             result['location_detailed'] = matching_row.iloc[0]['location_detailed']
         
-        # Special handling for quest requirement queries
-        if intent == 'quest_requirements':
+        # Special handling for patch requirement queries
+        if intent == 'patch_requirements':
             result['recommended'] = matching_row.iloc[0]['patch_recommended']
 
         return result
@@ -114,7 +114,7 @@ class AnswerRetriever:
 if __name__ == '__main__':
     retriever = AnswerRetriever()
     question = "What level do I need for magic trees?"
-    intent = "level_requirements"
+    intent = "tree_requirements"
     result = retriever.get_answer(question, intent)
     print(f'Question: {question}')
     print(f'Intent: {intent}')

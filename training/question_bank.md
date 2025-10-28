@@ -9,7 +9,7 @@ Fill with: level numbers from trees_df.level_requirement
     - What should I grow at level ___?
     - What should I plant at level ___?
 
-# Level Requirements
+# Tree Requirements
 Fill with: tree names from trees_df.tree_name
 
     - What level do I need for ___ trees?
@@ -21,12 +21,20 @@ Fill with: tree names from trees_df.tree_name
     - What farming level do I need for ___ trees?
     - At what level can I plant ___?
 
-# Quest Requirements
+# Patch Requirements
 Fill with: patch names from patches_df.location_simple
 
     - Which quests are required to use the ___ patch?
     - What quest is needed for the ___ patch?
     - Which quests are recommended for the ___ patch?
+    - What quest is needed for the ___ patch?
+    - Which quests are recommended for the ___ patch?
+    - What are the requirements for the ___ patch?
+    - What level do I need for the ___ patch?
+    - What do I need to access the ___ patch?
+    - What are the requirements for ___?
+    - What level is required for the ___ patch?
+    - How do I unlock the ___ patch?
 
 # Payment
 Fill with: tree names from trees_df.tree_name
