@@ -67,7 +67,7 @@ class ResponseGenerator:
                 response = f"{intro}To get there, you have a few options:\n"
                 for method in methods:
                     response += f"• {method}\n"
-                response = response.rstrip()  # Remove trailing newline
+                response = response.rstrip()
             
             return response
 
