@@ -33,9 +33,14 @@ class ResponseGenerator:
         
         return templates
 
-    def generate_response(self, intent, lookup_value, answer_value, recommended=None):
+    def generate_response(self, intent, result):
+        # Unpack result dictionary
+        lookup_value = result['lookup_value']
+        answer_value = result['answer_value']
+
         # Special handling for quest requirement queries
         if intent == 'quest_requirements':
+            recommended = result.get('recommended')
             # No requirement, no recommendation
             if pd.isna(answer_value) and pd.isna(recommended):
                 return f"The {str(lookup_value)} patch has no quest requirements."
@@ -61,11 +66,10 @@ if __name__ == '__main__':
     generator = ResponseGenerator()
     question = "What level do I need for magic trees?"
     intent = "level_requirements"
-    lookup_value = "magic"
-    answer_value = "75"
-    response = generator.generate_response(intent, lookup_value, answer_value)
+    result = {'lookup_value': 'magic', 'answer_value': '75'}
+    response = generator.generate_response(intent, result)
     print(f'Question: {question}')
-    print(f'Lookup: {lookup_value}')
     print(f'Intent: {intent}')
-    print(f'Answer: {answer_value}')
+    print(f'Lookup: {result['lookup_value']}')
+    print(f'Answer: {result['answer_value']}')
     print(f'Response: {response}')
