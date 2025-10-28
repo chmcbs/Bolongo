@@ -4,7 +4,6 @@ Response generator for user question response generation
 """
 
 import random
-from re import X
 import pandas as pd
 
 class ResponseGenerator:
@@ -12,21 +11,19 @@ class ResponseGenerator:
         self.templates = self.parse_response_bank()
 
     def parse_response_bank(self, response_bank_path='config/response_bank.md'):
-        # Read the response bank file
         with open(response_bank_path, 'r') as file:
             content = file.read()
-        
-        # Initialize templates dictionary and current intent
         templates = {}
         current_intent = None
 
         # Iterate through each line
         for line in content.split('\n'):
+
             # Handle section headers
             if line.startswith('# '):
                 current_intent = line[2:].strip().lower().replace(' ', '_')
                 templates[current_intent] = []
-        
+
             # Handle template lines
             elif line.strip().startswith('-') and current_intent:
                 template = line.strip()[1:].strip()
@@ -35,6 +32,7 @@ class ResponseGenerator:
         return templates
 
     def generate_response(self, intent, result):
+
         # Special handling for tree recommendations
         if intent == 'tree_recommendations':
             lookup_value = result['lookup_value']
@@ -51,30 +49,36 @@ class ResponseGenerator:
                 return f"You can't grow any trees at level {lookup_value} Farming. Try planting something else instead!"
 
         # Unpack result dictionary for other intents
-        lookup_value = result['lookup_value']
+        lookup_value = str(result['lookup_value'])
         answer_value = result['answer_value']
+        is_fruit_patch = result.get('is_fruit_patch', False)
 
+        # Create patch name for patch-based queries
+        if intent in ['transportation', 'quest_requirements']:
+            patch_name = f'{lookup_value} fruit tree patch' if is_fruit_patch else f'{lookup_value} patch'
+        
         # Special handling for quest requirement queries
         if intent == 'quest_requirements':
             recommended = result.get('recommended')
-            # No requirement, no recommendation
-            if pd.isna(answer_value) and pd.isna(recommended):
-                return f"The {str(lookup_value)} patch has no quest requirements."
-            # No requirement but has a recommendation
-            elif pd.isna(answer_value) and not pd.isna(recommended):
-                return f"The {str(lookup_value)} patch has no quest requirements, but {str(recommended)} is recommended."
-            # Requirement and recommendation
-            elif not pd.isna(answer_value) and not pd.isna(recommended):
-                return f"Using the {str(lookup_value)} patch requires {str(answer_value)}, and {str(recommended)} is also recommended."
-            # Requirement but no recommendation
+            recommended = None if pd.isna(recommended) else str(recommended)
+            answer_value = None if pd.isna(answer_value) else str(answer_value)
+
+            if answer_value is None and recommended is None:
+                return f"The {patch_name} has no quest requirements."
+            elif answer_value is None and recommended is not None:
+                return f"The {patch_name} has no quest requirements, but {recommended} is recommended."
+            elif answer_value is not None and recommended is not None:
+                return f"Using the {patch_name} requires {answer_value}, and {recommended} is also recommended."
             else:
-                return f"Using the {str(lookup_value)} patch requires {str(answer_value)}."
+                return f"Using the {patch_name} requires {answer_value}."
 
         # Special handling for transportation queries
         if intent == 'transportation':
-            methods = [method.strip() for method in str(answer_value).split(',')]
             location_detailed = result.get('location_detailed')
-            intro = f"The {str(lookup_value)} patch can be found {str(location_detailed)}.\n"
+            location_detailed = None if pd.isna(location_detailed) else str(location_detailed)
+            methods = [method.strip() for method in str(answer_value).split(',')]
+            intro = f"The {patch_name} can be found {location_detailed}.\n"
+
             # Single method (simple sentence)
             if len(methods) == 1:
                 response = f"{intro}To get there, use a {methods[0]}."
@@ -89,7 +93,7 @@ class ResponseGenerator:
 
         # Regular template handling
         template = random.choice(self.templates[intent])
-        response = template.replace('{lookup_value}', str(lookup_value))
+        response = template.replace('{lookup_value}', lookup_value)
         response = response.replace('{answer_value}', str(answer_value))
 
         return response

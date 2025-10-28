@@ -14,13 +14,19 @@ class AnswerRetriever:
         self.patches_df = pd.read_csv(patches_csv_path)
         self.intent_mapping = get_intent_mapping(self.trees_df, self.patches_df)
     
+    def _disambiguate_patch(self, question, matching_rows):
+        if len(matching_rows) == 1:
+            return matching_rows
+        if re.search(r'\bfruit\b', question.lower()):
+            return matching_rows[matching_rows['is_fruit_patch'] == True]
+        else:
+            return matching_rows[matching_rows['is_fruit_patch'] == False]
+
     def get_answer(self, question, intent):
-        # Get the lookup value from the question
         lookup_column = self.intent_mapping[intent]['lookup_column']
         lookup_column_values = list(set(lookup_column.astype(str).tolist()))  
         lookup_value = next((value for value in lookup_column_values 
                            if re.search(rf'\b{re.escape(value.lower())}\b', question.lower())), None)
-        # Get the answer column from the intent mapping
         answer_column = self.intent_mapping[intent]['answer_column']
 
         # Determine which dataframe to search based on the lookup column
@@ -31,7 +37,6 @@ class AnswerRetriever:
 
         # Special handling for tree recommendations
         if intent == 'tree_recommendations':
-            # Extract numbers from the question
             numbers = re.findall(r'\b\d+\b', question)
             lookup_value = numbers[0]
             lookup_float = float(lookup_value)
@@ -66,9 +71,12 @@ class AnswerRetriever:
             return result
 
         else:
-            # Find the row where the value in the lookup column matches the lookup value
             matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
         
+        # Special handling for multiple matches in the patches dataframe
+        if df_to_search is self.patches_df and len(matching_row) > 1:
+            matching_row = self._disambiguate_patch(question, matching_row)
+
         # Get the answer value from the matching row
         answer_value = matching_row.iloc[0][answer_column.name]
 
@@ -88,6 +96,10 @@ class AnswerRetriever:
             'answer_value': answer_value
         }
         
+        # Special handling for patch-based queries
+        if df_to_search is self.patches_df:
+            result['is_fruit_patch'] = matching_row.iloc[0]['is_fruit_patch']
+
         # Special handling for transportation queries
         if intent == 'transportation':
             result['location_detailed'] = matching_row.iloc[0]['location_detailed']
