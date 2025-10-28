@@ -1,15 +1,15 @@
 location_simple,location_detailed,transportation_methods,patch_requirement,patch_recommended,is_fruit_patch
-Lumbridge,west of lumbridge castle,lumbridge teleport,,,FALSE
-Varrock,in varrock castle courtyard,varrock teleport,,,FALSE
-Falador,in falador park,"ring of wealth teleport, falador teleport",,,FALSE
-Taverley,next to the entrance gate,"taverley house teleport, falador teleport",,,FALSE
-Gnome Stronghold,southwest of the spirit tree,spirit tree teleport,,completion of The Grand Tree,FALSE
-Farming Guild,in the west wing,"skills necklace teleport, fairy ring code CIR and then run southwest",level 65 Farming,,FALSE
-Nemus Retreat,in the northwest corner,"pendant of ates teleport and then run north, quetzal to auburnvale and then run southwest, fairy ring code AIS and then run southwest",completion of Children of the Sun,completion of Twilight's Promise,FALSE
-Gnome Stronghold,east of the spirit tree,spirit tree teleport,,completion of The Grand Tree,TRUE
-Catherby,on the east side of the beach,"catherby teleport, gnome glider to white wolf mountain and then run south, camelot teleport",,,TRUE
-Tree Gnome Village,west of the maze,"spirit tree teleport and then follow elkoy out of the maze, fairy ring code CIQ and then run northwest",,completion of Tree Gnome Village,TRUE
-Brimhaven,north of the town,"brimhaven house teleport, ardougne teleport and then run southeast to take the boat, charter ship, fairy ring code BJR and then run north",,,TRUE
-Lletya,in the southeast corner,teleport crystal,having started Mourning's End Part I,completion of Song of the Elves,TRUE
-Farming Guild,in the north wing,"skills necklace teleport, fairy ring code CIR and then run southwest",level 85 Farming,,TRUE
-Kastori,in the northwest corner,"pendant of ates teleport and then run southwest, quetzal to kastori and then run north",completion of Children of the Sun,completion of Twilight's Promise,TRUE
+Lumbridge,west of the castle,Lumbridge teleport,,,FALSE
+Varrock,in the castle courtyard,Varrock teleport,,,FALSE
+Falador,in the park,"Ring of Wealth teleport, Falador teleport",,,FALSE
+Taverley,next to the entrance gate,"Taverley house teleport, Falador teleport",,,FALSE
+Gnome Stronghold,southwest of the Spirit Tree,Spirit Tree teleport,,completion of The Grand Tree,FALSE
+Farming Guild,in the west wing,"Skills Necklace teleport, Fairy ring code CIR and run southwest",level 65 Farming,,FALSE
+Nemus Retreat,in the northwest corner of the camp,"Pendant of Ates teleport and run north, Quetzal to Auburnvale and run southwest, Fairy ring code AIS and run southwest",completion of Children of the Sun,completion of Twilight's Promise,FALSE
+Gnome Stronghold,east of the Spirit Tree,Spirit Tree teleport,,completion of The Grand Tree,TRUE
+Catherby,on the east side of the beach,"Catherby teleport, Gnome glider to White Wolf Mountain and run south, Camelot teleport",,,TRUE
+Tree Gnome Village,west of the maze,"Spirit Tree teleport and follow Elkoy out of the maze, Fairy ring code CIQ and run northwest",,completion of Tree Gnome Village,TRUE
+Brimhaven,north of the town,"Brimhaven house teleport, Ardougne teleport and run southeast to take the boat, Charter ship, Fairy ring code BJR and run north",,,TRUE
+Lletya,in the southeast corner of the village,Teleport Crystal,having started Mourning's End Part I,completion of Song of the Elves,TRUE
+Farming Guild,in the north wing,"Skills Necklace teleport, Fairy ring code CIR and run southwest",level 85 Farming,,TRUE
+Kastori,in the northwest corner of the village,"Pendant of Ates teleport and run southwest, Quetzal to Kastori and run north",completion of Children of the Sun,completion of Twilight's Promise,TRUE

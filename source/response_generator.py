@@ -54,6 +54,23 @@ class ResponseGenerator:
             else:
                 return f"Using the {str(lookup_value)} patch requires {str(answer_value)}."
 
+        # Special handling for transportation queries
+        if intent == 'transportation':
+            methods = [method.strip() for method in str(answer_value).split(',')]
+            location_detailed = result.get('location_detailed')
+            intro = f"The {str(lookup_value)} patch can be found {str(location_detailed)}.\n"
+            # Single method (simple sentence)
+            if len(methods) == 1:
+                response = f"{intro}To get there, use a {methods[0]}."
+            # Multiple methods (bullet points)
+            else:
+                response = f"{intro}To get there, you have a few options:\n"
+                for method in methods:
+                    response += f"• {method}\n"
+                response = response.rstrip()  # Remove trailing newline
+            
+            return response
+
         # Regular template handling
         template = random.choice(self.templates[intent])
         response = template.replace('{lookup_value}', str(lookup_value))
@@ -70,6 +87,6 @@ if __name__ == '__main__':
     response = generator.generate_response(intent, result)
     print(f'Question: {question}')
     print(f'Intent: {intent}')
-    print(f'Lookup: {result['lookup_value']}')
-    print(f'Answer: {result['answer_value']}')
+    print(f'Lookup: {result["lookup_value"]}')
+    print(f'Answer: {result["answer_value"]}')
     print(f'Response: {response}')

@@ -66,6 +66,10 @@ class AnswerRetriever:
             'answer_value': answer_value
         }
         
+        # Special handling for transportation queries
+        if intent == 'transportation':
+            result['location_detailed'] = matching_row.iloc[0]['location_detailed']
+        
         # Special handling for quest requirement queries
         if intent == 'quest_requirements':
             result['recommended'] = matching_row.iloc[0]['patch_recommended']
@@ -80,5 +84,5 @@ if __name__ == '__main__':
     result = retriever.get_answer(question, intent)
     print(f'Question: {question}')
     print(f'Intent: {intent}')
-    print(f'Lookup: {result['lookup_value']}')
-    print(f'Answer: {result['answer_value']}')
+    print(f'Lookup: {result["lookup_value"]}')
+    print(f'Answer: {result["answer_value"]}')
