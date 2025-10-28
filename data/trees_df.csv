@@ -1,14 +1,14 @@
 tree_name,level_requirement,growth_time_minutes,payment_name,total_experience,is_fruit_tree
-oak,15,160,1 basket of tomatoes,481.3,FALSE
-willow,30,240,1 basket of apples,1481.5,FALSE
-maple,45,320,1 basket of oranges,3448.4,FALSE
-yew,60,400,10 cactus spines,7150.9,FALSE
-magic,75,480,25 coconuts,13913.8,FALSE
-apple,27,960,9 sweetcorn,1272.5,TRUE
-banana,33,960,4 baskets of apples,1841.5,TRUE
-orange,39,960,3 baskets of strawberries,2586.7,TRUE
-curry,42,960,5 baskets of bananas,3036.9,TRUE
-pineapple,51,960,10 watermelons,4791.7,TRUE
-papaya,57,960,10 pineapples,6380.4,TRUE
-palm,68,960,15 papaya fruit,10509.6,TRUE
-dragonfruit,81,960,15 coconuts,17895,TRUE
+Oak,15,160,1 basket of tomatoes,481.3,FALSE
+Willow,30,240,1 basket of apples,1481.5,FALSE
+Maple,45,320,1 basket of oranges,3448.4,FALSE
+Yew,60,400,10 cactus spines,7150.9,FALSE
+Magic,75,480,25 coconuts,13913.8,FALSE
+Apple,27,960,9 sweetcorn,1272.5,TRUE
+Banana,33,960,4 baskets of apples,1841.5,TRUE
+Orange,39,960,3 baskets of strawberries,2586.7,TRUE
+Curry,42,960,5 baskets of bananas,3036.9,TRUE
+Pineapple,51,960,10 watermelons,4791.7,TRUE
+Papaya,57,960,10 pineapples,6380.4,TRUE
+Palm,68,960,15 papaya fruit,10509.6,TRUE
+Dragonfruit,81,960,15 coconuts,17895,TRUE
