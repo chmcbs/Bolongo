@@ -4,6 +4,7 @@ Response generator for user question response generation
 """
 
 import random
+from re import X
 import pandas as pd
 
 class ResponseGenerator:
@@ -34,7 +35,22 @@ class ResponseGenerator:
         return templates
 
     def generate_response(self, intent, result):
-        # Unpack result dictionary
+        # Special handling for tree recommendations
+        if intent == 'tree_recommendations':
+            lookup_value = result['lookup_value']
+            regular_tree = result['regular_tree']
+            fruit_tree = result['fruit_tree']
+
+            if regular_tree and fruit_tree:
+                return f"The best trees to grow at level {lookup_value} Farming are {regular_tree} and {fruit_tree}."
+            elif regular_tree:
+                return f"The best tree to grow at level {lookup_value} Farming is {regular_tree}."
+            elif fruit_tree:
+                return f"The best tree to grow at level {lookup_value} Farming is {fruit_tree}."
+            else:
+                return f"You can't grow any trees at level {lookup_value} Farming. Try planting something else instead!"
+
+        # Unpack result dictionary for other intents
         lookup_value = result['lookup_value']
         answer_value = result['answer_value']
 

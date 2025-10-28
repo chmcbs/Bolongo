@@ -1,15 +1,3 @@
-# Tree Recommendations
-dataframe = trees_df
-lookup_value = level_requirement
-answer_value = tree_name
-
-    - The best tree at level {lookup_value} Farming is {answer_value}.
-    - The best trees at level {lookup_value} Farming are {answer_value} trees.
-    - At level {lookup_value} Farming, you should grow {answer_value} trees.
-    - At level {lookup_value} Farming, you should plant {answer_value} trees.
-    - The best tree to grow at level {lookup_value} Farming is {answer_value}.
-    - The best trees to grow at level {lookup_value} Farming are {answer_value} trees.
-
 # Level Requirements
 dataframe = trees_df
 lookup_value = tree_name
