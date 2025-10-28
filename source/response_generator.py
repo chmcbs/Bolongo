@@ -38,26 +38,21 @@ class ResponseGenerator:
         if intent == 'quest_requirements':
             # No requirement, no recommendation
             if pd.isna(answer_value) and pd.isna(recommended):
-                return f"The {str(lookup_value).title()} patch has no quest requirements."
+                return f"The {str(lookup_value)} patch has no quest requirements."
             # No requirement but has a recommendation
             elif pd.isna(answer_value) and not pd.isna(recommended):
-                return f"The {str(lookup_value).title()} patch has no quest requirements, but {str(recommended)} is recommended."
+                return f"The {str(lookup_value)} patch has no quest requirements, but {str(recommended)} is recommended."
             # Requirement and recommendation
             elif not pd.isna(answer_value) and not pd.isna(recommended):
-                return f"Using the {str(lookup_value).title()} patch requires {str(answer_value)}, and {str(recommended)} is also recommended."
+                return f"Using the {str(lookup_value)} patch requires {str(answer_value)}, and {str(recommended)} is also recommended."
             # Requirement but no recommendation
             else:
-                return f"Using the {str(lookup_value).title()} patch requires {str(answer_value)}."
+                return f"Using the {str(lookup_value)} patch requires {str(answer_value)}."
 
         # Regular template handling
         template = random.choice(self.templates[intent])
-        response = template.replace('{lookup_value}', str(lookup_value).title())
-
-        # Capitalisation for tree recommendations
-        if intent == 'tree_recommendations':
-            response = response.replace('{answer_value}', str(answer_value).title())
-        else:
-            response = response.replace('{answer_value}', str(answer_value))
+        response = template.replace('{lookup_value}', str(lookup_value))
+        response = response.replace('{answer_value}', str(answer_value))
 
         return response
 
