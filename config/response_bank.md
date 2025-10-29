@@ -23,10 +23,10 @@ lookup_value = tree_name
 answer_value = payment_name
 
     - {lookup_value} trees require {answer_value} as a protection payment.
-    - To protect {lookup_value} trees, pay the farmer with {answer_value}.
+    - To protect {lookup_value} trees, pay the gardener with {answer_value}.
     - The protection payment for {lookup_value} trees is {answer_value}.
-    - Farmers require {answer_value} to protect {lookup_value} trees.
-    - {lookup_value} trees can be protected by giving the farmer {answer_value}.
+    - Gardeners require {answer_value} to protect {lookup_value} trees.
+    - {lookup_value} trees can be protected by giving the gardener {answer_value}.
     - {lookup_value} trees can be protected with {answer_value}.
 
 # Growth Time

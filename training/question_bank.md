@@ -40,9 +40,9 @@ Fill with: patch names from patches_df.location_simple
 Fill with: tree names from trees_df.tree_name
 
     - What payment is needed for ___ trees?
-    - What do I pay the farmer to protect ___?
-    - What item does the farmer need for ___ trees?
-    - What should I give the farmer for ___?
+    - What do I pay the gardener to protect ___?
+    - What item does the gardener need for ___ trees?
+    - What should I give the gardener for ___?
     - How do I protect ___ trees?
     - What is the protection payment for ___?
 
