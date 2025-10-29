@@ -5,6 +5,7 @@ training/__pycache__
 
 # Jupyter
 .ipynb_checkpoints
+testing.ipynb
 
 # macOS
 .DS_Store
