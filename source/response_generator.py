@@ -33,6 +33,26 @@ class ResponseGenerator:
 
     def generate_response(self, intent, result):
 
+        # Special handling for list intents
+        if intent in ['list_regular_patches', 'list_fruit_patches']:
+            patches = result['patches']
+            patch_type = 'fruit tree patches' if intent == 'list_fruit_patches' else 'tree patches'
+            response = f'There are {len(patches)} {patch_type} in total:\n'
+
+            # Create a list of patches and their information
+            for patch in patches:
+                location = patch['location']
+                requirement = patch['requirement']
+
+                # Format requirement text
+                requirement_text = ''
+                if pd.notna(requirement):
+                    requirement_text = f' (requires {requirement})'
+                 
+                response += f"• {location}{requirement_text}\n"
+
+            return response.rstrip()
+
         # Special handling for tree recommendations
         if intent == 'tree_recommendations':
             lookup_value = result['lookup_value']
@@ -81,12 +101,20 @@ class ResponseGenerator:
 
             # Single method (simple sentence)
             if len(methods) == 1:
-                response = f"{intro}To get there, use a {methods[0]}."
+                response = f'{intro}To get there, use a {methods[0]}.'
+
+            # Two methods (bullet points)
+            elif len(methods) == 2:
+                response = f'{intro}To get there, you have two options:\n'
+                for method in methods:
+                    response += f'• {method}\n'
+                response = response.rstrip()
+
             # Multiple methods (bullet points)
             else:
-                response = f"{intro}To get there, you have a few options:\n"
+                response = f'{intro}To get there, you have a few options:\n'
                 for method in methods:
-                    response += f"• {method}\n"
+                    response += f'• {method}\n'
                 response = response.rstrip()
             
             return response

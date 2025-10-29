@@ -63,3 +63,79 @@ Fill with: location names from patches_df.location_simple
     - What is the fastest way to the ___ patch?
     - What is the nearest teleport to the ___ patch?
     - How should I travel to patch in ___?
+
+# List Regular Patches
+
+    - What tree patches are there?
+    - Show me all tree patches
+    - Where are all the tree patches?
+    - List all tree patch locations
+    - What are all the tree patch locations?
+    - Show me all the patches for trees
+    - What patches are available for regular trees?
+    - How many tree patches are there?
+    - Where are the tree patches?
+    - Give me a list of tree patches
+    - Tell me all the tree patch locations
+    - What are the tree patch locations?
+    - Can you list all tree patches?
+    - Show all tree patches
+    - What locations have tree patches?
+    - List tree patches
+    - Show me tree patch locations
+    - Where are regular tree patches?
+    - What regular tree patches are available?
+    - List all regular tree patches
+    - Show regular tree patch locations
+    - How many regular tree patches are there?
+    - Give me all tree patch locations
+    - Tell me where the tree patches are
+    - What are all the regular tree patches?
+    - List locations for tree patches
+    - What locations are available for trees?
+    - Where are tree patches located?
+    - Show me every tree patch
+    - Give me every tree patch location
+    - What are all tree patch options?
+    - Display all tree patches
+    - Tell me every tree patch location
+    - What tree patch options exist?
+    - Show complete list of tree patches
+    - Give me the full list of tree patches
+
+# List Fruit Patches
+
+    - What fruit tree patches are there?
+    - Show me all fruit tree patches
+    - Where are all the fruit tree patches?
+    - List all fruit tree patch locations
+    - What are all the fruit tree patch locations?
+    - Where can I plant fruit trees?
+    - Show me all the patches for fruit trees
+    - What patches are available for fruit trees?
+    - How many fruit tree patches are there?
+    - Where are the fruit tree patches?
+    - Which patches can I plant fruit trees at?
+    - Give me a list of fruit tree patches
+    - Tell me all the fruit tree patch locations
+    - What are the fruit tree patch locations?
+    - Can you list all fruit tree patches?
+    - Show all fruit tree patches
+    - Where can I grow fruit trees?
+    - What locations have fruit tree patches?
+    - List fruit tree patches
+    - Show me fruit tree patch locations
+    - Where are fruit patches?
+    - What fruit patches are available?
+    - List all fruit patches
+    - Show fruit patch locations
+    - How many fruit patches are there?
+    - Where can I plant fruits?
+    - Give me all fruit tree patch locations
+    - Tell me where the fruit tree patches are
+    - What are all the fruit patches?
+    - Where do I plant fruit trees?
+    - Show me where to plant fruit trees
+    - List locations for fruit tree patches
+    - What locations are available for fruit trees?
+    - Where are fruit tree patches located?

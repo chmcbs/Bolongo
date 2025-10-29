@@ -115,13 +115,18 @@ class TrainingDataGenerator:
             
             fill_instruction = config['fill_with']
             templates = config['templates']
-            fill_values = self.get_fill_values(fill_instruction)
-            
-            # Generate questions by filling each template with each value
-            for template in templates:
-                for value in fill_values:
-                    filled = template.replace('___', value)
-                    intent_texts.append(filled)
+
+            # Special handling for list intents
+            if intent == 'list_regular_patches' or intent == 'list_fruit_patches':
+                intent_texts = templates.copy()
+            else:
+                # Generate questions by filling each template with each value
+                fill_values = self.get_fill_values(fill_instruction)
+        
+                for template in templates:
+                    for value in fill_values:
+                        filled = template.replace('___', value)
+                        intent_texts.append(filled)
             
             # Remove duplicates
             intent_texts = list(set(intent_texts))

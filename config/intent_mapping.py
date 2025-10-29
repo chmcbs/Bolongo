@@ -30,5 +30,13 @@ def get_intent_mapping(trees_df, patches_df):
         'transportation': {
             'lookup_column': patches_df['location_simple'],
             'answer_column': patches_df['transportation_methods']
+        },
+        'list_regular_patches': {
+            'filter_column': patches_df['is_fruit_patch'],
+            'filter_value': False,
+        },
+        'list_fruit_patches': {
+            'filter_column': patches_df['is_fruit_patch'],
+            'filter_value': True,
         }
     }

@@ -23,6 +23,25 @@ class AnswerRetriever:
             return matching_rows[matching_rows['is_fruit_patch'] == False]
 
     def get_answer(self, question, intent):
+
+        # Special handling for list intents
+        if intent in ['list_regular_patches', 'list_fruit_patches']:
+            filter_column = self.intent_mapping[intent]['filter_column']
+            filter_value = self.intent_mapping[intent]['filter_value']
+            filtered_df = self.patches_df[filter_column == filter_value]
+
+            # Create a list of patches and their information
+            patches_list = []
+            for _, row in filtered_df.iterrows():
+                patch_info = {
+                    'location': row['location_simple'],
+                    'requirement': row['patch_requirement']
+                }
+                patches_list.append(patch_info)
+
+            return {'patches': patches_list}
+
+        # Regular handling for other intents
         lookup_column = self.intent_mapping[intent]['lookup_column']
         lookup_column_values = list(set(lookup_column.astype(str).tolist()))  
         lookup_value = next((value for value in lookup_column_values 
