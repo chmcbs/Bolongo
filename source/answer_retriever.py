@@ -50,7 +50,7 @@ class AnswerRetriever:
 
         # Handle cases where the lookup value is not found
         if lookup_value is None and intent not in ['tree_recommendations']:
-            return "Sorry, my hearing isn't great these days. Could you say that again please?\nI always told that referee to go easy on the whistle but he never listened."
+            return "Sorry, my hearing isn't great after all those years of gnome ball.\nCould you repeat the question please?"
 
         # Determine which dataframe to search based on the lookup column
         if lookup_column.name in self.trees_df.columns:
