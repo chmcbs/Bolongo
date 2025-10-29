@@ -48,6 +48,10 @@ class AnswerRetriever:
                            if re.search(rf'\b{re.escape(value.lower())}\b', question.lower())), None)
         answer_column = self.intent_mapping[intent]['answer_column']
 
+        # Handle cases where the lookup value is not found
+        if lookup_value is None and intent not in ['tree_recommendations']:
+            return "Sorry, my hearing isn't great these days. Could you say that again please? I always told that gnome ball referee to go easy on the whistle but he never listened."
+
         # Determine which dataframe to search based on the lookup column
         if lookup_column.name in self.trees_df.columns:
             df_to_search = self.trees_df
@@ -89,9 +93,13 @@ class AnswerRetriever:
 
             return result
 
-        else:
-            matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
+        # Find the matching row in the dataframe
+        matching_row = df_to_search[df_to_search[lookup_column.name].astype(str).str.lower() == lookup_value.lower()]
         
+        # Handle cases where there is no matching row
+        if len(matching_row) == 0:
+            return f"What in the blazes of Khazard is that?"
+
         # Special handling for multiple matches in the patches dataframe
         if df_to_search is self.patches_df and len(matching_row) > 1:
             matching_row = self._disambiguate_patch(question, matching_row)
