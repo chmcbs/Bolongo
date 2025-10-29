@@ -63,6 +63,10 @@ Fill with: location names from patches_df.location_simple
     - What is the fastest way to the ___ patch?
     - What is the nearest teleport to the ___ patch?
     - How should I travel to patch in ___?
+    - Where is the ___ patch?
+    - How do I get to the ___ patch?
+    - Where can I find the ___ patch?
+    - What's the best way to get to the ___ patch?
 
 # List Regular Patches
 
