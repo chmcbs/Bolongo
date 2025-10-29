@@ -66,7 +66,7 @@ class ResponseGenerator:
             elif fruit_tree:
                 return f"The best tree to grow at level {lookup_value} Farming is {fruit_tree}."
             else:
-                return f"Sorry, you can't grow any trees at that level. Try planting something else instead!"
+                return f"Sorry, you can't grow any trees at that level.\nTry planting something else instead!"
 
         # Unpack result dictionary for other intents
         lookup_value = str(result['lookup_value'])
