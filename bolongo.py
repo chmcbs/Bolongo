@@ -207,11 +207,11 @@ st.markdown("""
 <div class="topics-section">
 <p class="topics-header" style="font-weight: bold; margin-bottom: 5px; text-align: left; color: #FFFF00;">Ask me anything about trees!</p>
 <ul style="font-size: 16px; margin-top: 0; text-align: left; padding-left: 0; list-style-type: none;">
-<li><strong>Tree recommendations</strong> — "Which trees should I grow at level 27?"</li>
-<li><strong>Farming level requirements</strong> — "What Farming level do I need to plant Maple trees?"</li>
-<li><strong>Quest requirements</strong> — "What are the requirements for the Nemus Retreat patch?"</li>
 <li><strong>Patch locations</strong> — "Give me a list of all regular tree patches."</li>
-<li><strong>Transportation</strong> — "Where is the Catherby patch?"</li>
+<li><strong>Transportation methods</strong> — "How do I get to the Catherby patch?"</li>
+<li><strong>Quest requirements</strong> — "What are the requirements for the Nemus Retreat patch?"</li>
+<li><strong>Farming level requirements</strong> — "What Farming level do I need to plant Maple trees?"</li>
+<li><strong>Tree recommendations</strong> — "Which trees should I grow at level 27?"</li>
 <li><strong>Growth time</strong> — "How long do Willow trees take to grow?"</li>
 <li><strong>Protection payments</strong> — "What do I give to the gardener to protect Yew trees?"</li>
 </ul>
