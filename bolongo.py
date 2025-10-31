@@ -94,6 +94,11 @@ st.markdown(f"""
         color: #FFFF00 !important;
         font-weight: normal !important;
     }}
+    /* Override yellow for text input container elements */
+    .stTextInput *:not(input),
+    [data-testid="stTextInput"] *:not(input) {{
+        color: #666666 !important;
+    }}
     /* Bold text uses RuneScape Bold */
     strong, b, .bold-text {{
         font-weight: bold !important;
@@ -120,6 +125,19 @@ st.markdown(f"""
     .stTextInput > div > div > input::selection {{
         background-color: #CCCCCC !important;
         color: #1a1a1a !important;
+    }}
+    /* Fix helper text to be dark and visible */
+    .stTextInput small,
+    .stTextInput [data-baseweb="helper-text"],
+    .stTextInput div[data-baseweb="base-input"] small,
+    [data-testid="stTextInput"] small,
+    [data-testid="InputInstructions"],
+    .stTextInput div[class*="InputInstructions"],
+    div[data-baseweb="base-input"] + div,
+    .stTextInput p,
+    [data-testid="stTextInput"] p,
+    [data-testid="stTextInput"] div[class*="caption"] {{
+        color: #666666 !important;
     }}
     /* White answer box */
     .stAlert {{
